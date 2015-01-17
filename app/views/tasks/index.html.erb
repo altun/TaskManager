@@ -11,7 +11,6 @@
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
@@ -19,7 +18,7 @@
         <td><%= task.aciklama %></td>
         <td><%= task.tamamlandı %></td>
         <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Edit', edit_task_path(task), data: {confirm: 'Bu giriyi düzenlemek üzeresiniz'} %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_task_path, data: {confirm: 'yeni görev oluşturacaksınız.'} %>
